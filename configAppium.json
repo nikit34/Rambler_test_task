@@ -1,5 +1,5 @@
 {
-  "app":"C:\\\\Users\\\\permi\\\\source\\\\repos\\\\draft\\\\3\\\\app.apk",
+  "app":"<path_app>",
   "appActivity":".NexusLauncherActivity",
   "appPackage":"com.google.android.apps.nexuslauncher",
   "deviceName":"Android Emulator",
