@@ -5,8 +5,7 @@
       "appWaitActivity":"ru.rambler.popcorn.sdk.presentation.screens.main.MainActivity",
       "appPackage":"ru.rambler.kassa",
       "deviceName":"Android Emulator",
-      "platformName":"Android",
-      "automationName":"UiAutomator2"
+      "platformName":"Android"
     }
   },
   {
@@ -15,8 +14,7 @@
       "appWaitActivity":"ru.rambler.popcorn.sdk.presentation.screens.onboarding.OnBoardingActivity",
       "appPackage":"ru.rambler.kassa",
       "deviceName":"Android Emulator",
-      "platformName":"Android",
-      "automationName":"UiAutomator2"
+      "platformName":"Android"
     }
   }
 ]
