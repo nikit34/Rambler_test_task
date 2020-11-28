@@ -1,12 +1,13 @@
 ###Notes
-- command to detect application name on android 
+- command to detect application name on android (OS: windows 10 pro)
 
-     ```adb shell "dumpsys activity activities | grep mResumedActivity"```
+     ```adb shell dumpsys window | find "mCurrentFocus"```
 
 - File with config for Appium server
 
     ```configAppium.json```
     
+        
     
 ###Contacts
 
