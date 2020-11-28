@@ -1,22 +1,27 @@
 # Naming Convention for feature scenarios
 
-### last modfied:
+#### last modfied
         Permikov Nikita - 29.10
         
 
-```
 *legend*
+```
 object - any element
 / - separate by varianties
-float, int - type of data
+float, int, str - type of data
 ```
         
 **search**
 
-- "<Partially/Completely>" matches text
-- Button is "<inactive/nonactive>" and "</not>" ready to press
+- see "<Partially/Completely>" matches text "str" and "str"
+- see button with "<str>" text
+- see button is "</not>" ready to press
+- see button is "</not>" ready to press with "<str>" text
+- see button is "<inactive/nonactive>" state
+- see button is "<inactive/nonactive>" state and "</not>" ready to press
+- see button is "<inactive/nonactive>" state and with "<str>" text
+- see button is "<inactive/nonactive>" state and "</not>" ready to press with "<str>" text
 - 
--
 -
 -
 -
@@ -24,7 +29,7 @@ float, int - type of data
 
 **dragdrop**
 
-- 
+- Dragdrop "<object>" object from "<float>" by "<float>"
 -
 -
 -
