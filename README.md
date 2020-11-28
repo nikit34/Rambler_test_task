@@ -1,4 +1,4 @@
-###Notes
+## Notes
 - command to detect application name on android (OS: windows 10 pro)
 
      ```adb shell dumpsys window | find "mCurrentFocus"```
@@ -9,7 +9,7 @@
     
         
     
-###Contacts
+## Contacts
 
 **Никита Пермяков**
     
