@@ -1,10 +1,22 @@
-{
-  "app":"<path_app>",
-  "appActivity":".NexusLauncherActivity",
-  "appPackage":"com.google.android.apps.nexuslauncher",
-  "deviceName":"Android Emulator",
-  "ensureWebviewsHavePages":true,
-  "platformName":"Android",
-  "newCommandTimeout":0,
-  "connectHardwareKeyboard":true
-}
+[
+  {
+    "main": {
+      "app":"<path_app>",
+      "appWaitActivity":"ru.rambler.popcorn.sdk.presentation.screens.main.MainActivity",
+      "appPackage":"ru.rambler.kassa",
+      "deviceName":"Android Emulator",
+      "platformName":"Android",
+      "automationName":"UiAutomator2"
+    }
+  },
+  {
+    "onboarding": {
+      "app":"<path_app>",
+      "appWaitActivity":"ru.rambler.popcorn.sdk.presentation.screens.onboarding.OnBoardingActivity",
+      "appPackage":"ru.rambler.kassa",
+      "deviceName":"Android Emulator",
+      "platformName":"Android",
+      "automationName":"UiAutomator2"
+    }
+  }
+]
