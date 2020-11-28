@@ -13,14 +13,15 @@ float, int, str - type of data
         
 **search**
 
-- see "<Partially/Completely>" matches text "str" and "str"
-- see button with "<str>" text
-- see button is "</not>" ready to press
-- see button is "</not>" ready to press with "<str>" text
-- see button is "<inactive/nonactive>" state
-- see button is "<inactive/nonactive>" state and "</not>" ready to press
-- see button is "<inactive/nonactive>" state and with "<str>" text
-- see button is "<inactive/nonactive>" state and "</not>" ready to press with "<str>" text
+- see completely matches text "str" and "str"
+- see partially matches text "str"
+- see button <object> with "<str>" text
+- see button <object> is "</not>" ready to press
+- see button <object> is "</not>" ready to press with "<str>" text
+- see button <object> is "<inactive/nonactive>" state
+- see button <object> is "<inactive/nonactive>" state and "</not>" ready to press
+- see button <object> is "<inactive/nonactive>" state and with "<str>" text
+- see button <object> is "<inactive/nonactive>" state and "</not>" ready to press with "<str>" text
 - 
 -
 -
@@ -50,6 +51,15 @@ float, int, str - type of data
 **move**
 
 - Move "<object>" object from "<float>" by "<float>"
+-
+-
+-
+-
+-
+
+**wait**
+
+- 
 -
 -
 -
