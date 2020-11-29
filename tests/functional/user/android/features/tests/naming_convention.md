@@ -6,6 +6,7 @@
 
 *legend*
 ```
+base:S - current page or base element (footer, header and etc)
 object:S - any element
 / - separate by varianties
 float, int, str - type of data
@@ -13,15 +14,14 @@ float, int, str - type of data
         
 **search**
 
-- see completely matches text "str" and <object:S>
-- see partially matches text "str" and <object:S>
-- see button <object:S> with "<str>" text
-- see button <object:S> is "</not>" ready to press
-- see button <object:S> is "</not>" ready to press with "<str>" text
-- see button <object:S> is "<active/nonactive>" state
-- see button <object:S> is "<active/nonactive>" state and "</not>" ready to press
-- see button <object:S> is "<active/nonactive>" state and with "<str>" text
-- see button <object:S> is "<active/nonactive>" state and "</not>" ready to press with "<str>" text
+- see <completely/partially> matches text "str" and <object:S> on <base:S>
+- see button <object:S> with "<str>" text on <base:S>
+- see button <object:S> is "</not>" ready to press on <base:S>
+- see button <object:S> is "</not>" ready to press with "<str>" text on <base:S>
+- see button <object:S> is "<active/nonactive>" state on <base:S>
+- see button <object:S> is "<active/nonactive>" state and "</not>" ready to press on <base:S>
+- see button <object:S> is "<active/nonactive>" state and with "<str>" text on <base:S>
+- see button <object:S> is "<active/nonactive>" state and "</not>" ready to press with "<str>" text on <base:S>
 - 
 -
 -
@@ -30,7 +30,7 @@ float, int, str - type of data
 
 **dragdrop**
 
-- Dragdrop "<object:S>" object from "<float>" by "<float>"
+- Dragdrop <object:S> object from "<float>" by "<float>" on <base:S>
 -
 -
 -
@@ -40,7 +40,7 @@ float, int, str - type of data
 
 **tap**
 
-- Tap by button
+- Tap by button on <page:S> page on <base:S>
 -
 -
 -
@@ -50,7 +50,7 @@ float, int, str - type of data
 
 **move**
 
-- Move "<object:S>" object:S from "<float>" by "<float>"
+- Move <object:S> from "<float>" by "<float>" on <base:S>
 -
 -
 -
