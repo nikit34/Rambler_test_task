@@ -9,7 +9,7 @@ Feature: Check Onboarding page by template
     And see button NEXT_BTN with "ДАЛЕЕ" text
 
   Scenario: State of buttons
-    When see button NEXT_BTN is "" ready to press
+    When see button NEXT_BTN is " " ready to press
     Then see button NEXT_BTN is "active" state
-    And see button CLOSE_BTN is "nonactive" state and "" ready to press
+    And see button CLOSE_BTN is "nonactive" state and " " ready to press
 

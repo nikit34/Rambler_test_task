@@ -6,22 +6,22 @@
 
 *legend*
 ```
-object - any element
+object:S - any element
 / - separate by varianties
 float, int, str - type of data
 ```
         
 **search**
 
-- see completely matches text "str" and <object>
-- see partially matches text "str" and <object>
-- see button <object> with "<str>" text
-- see button <object> is "</not>" ready to press
-- see button <object> is "</not>" ready to press with "<str>" text
-- see button <object> is "<active/nonactive>" state
-- see button <object> is "<active/nonactive>" state and "</not>" ready to press
-- see button <object> is "<active/nonactive>" state and with "<str>" text
-- see button <object> is "<active/nonactive>" state and "</not>" ready to press with "<str>" text
+- see completely matches text "str" and <object:S>
+- see partially matches text "str" and <object:S>
+- see button <object:S> with "<str>" text
+- see button <object:S> is "</not>" ready to press
+- see button <object:S> is "</not>" ready to press with "<str>" text
+- see button <object:S> is "<active/nonactive>" state
+- see button <object:S> is "<active/nonactive>" state and "</not>" ready to press
+- see button <object:S> is "<active/nonactive>" state and with "<str>" text
+- see button <object:S> is "<active/nonactive>" state and "</not>" ready to press with "<str>" text
 - 
 -
 -
@@ -30,7 +30,7 @@ float, int, str - type of data
 
 **dragdrop**
 
-- Dragdrop "<object>" object from "<float>" by "<float>"
+- Dragdrop "<object:S>" object from "<float>" by "<float>"
 -
 -
 -
@@ -50,7 +50,7 @@ float, int, str - type of data
 
 **move**
 
-- Move "<object>" object from "<float>" by "<float>"
+- Move "<object:S>" object:S from "<float>" by "<float>"
 -
 -
 -
