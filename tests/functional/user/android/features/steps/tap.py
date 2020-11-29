@@ -1,24 +1,24 @@
 from behave import given, when, then
 
 
-@given('tap button {object:S} on {base:S}')
-def step_impl(context, object, base):
+@given('tap button {label:S} on {base:S}')
+def step_impl(context, label, base):
     pass
 
 
-@when('tap button {object:S} on {base:S}')
-def step_impl(context, object, base):
+@when('tap button {label:S} on {base:S}')
+def step_impl(context, label, base):
     pass
 
 
-@then('tap button {object:S} on {base:S}')
-def step_impl(context, object, base):
+@then('tap button {label:S} on {base:S}')
+def step_impl(context, label, base):
     if base == 'ONBOARDING_PAGE':
-        if object == 'NEXT_BTN':
-            context.app.onboarding_page.tap_next_btn()
-        elif object == 'CLOSE_BTN':
-            context.app.onboarding_page.tap_close_btn()
+        if label == 'NEXT_BTN':
+            context.app.onboarding_page.tap_btn(label)
+        elif label == 'CLOSE_BTN':
+            context.app.onboarding_page.tap_btn(label)
         else:
-            raise KeyError(f'{object} is not defined')
+            raise KeyError(f'{label} is not defined')
     else:
         raise KeyError(f'{base} is not defined')

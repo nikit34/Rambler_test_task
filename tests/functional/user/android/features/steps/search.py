@@ -1,49 +1,49 @@
 from behave import given, when, then
 
 
-@given('see match text "{text}" and {object:S} on {base:S}')
-def step_impl(context, text, object, base):
+@given('see match text "{text}" and {label:S} on {base:S}')
+def step_impl(context, text, label, base):
     pass
 
 
-@when('see match text "{text}" and {object:S} on {base:S}')
-def step_impl(context, text, object, base):
+@when('see match text "{text}" and {label:S} on {base:S}')
+def step_impl(context, text, label, base):
     if base == 'ONBOARDING_PAGE':
-        if object == 'TITLE_TEXT':
-            context.app.onboarding_page.verify_title_text(text)
-        elif object == 'MAIN_TEXT':
-            context.app.onboarding_page.verify_main_text(text)
+        if label == 'TITLE_TEXT':
+            context.app.onboarding_page.verify_text(text, label)
+        elif label == 'MAIN_TEXT':
+            context.app.onboarding_page.verify_text(text, label)
         else:
-            raise KeyError(f'{object} is not defined')
+            raise KeyError(f'{label} is not defined')
     else:
         raise KeyError(f'{base} is not defined')
 
 
-@then('see match text "{text}" and {object:S} on {base:S}')
-def step_impl(context, text, object, base):
+@then('see match text "{text}" and {label:S} on {base:S}')
+def step_impl(context, text, label, base):
     pass
 
 
-@given('see button {object:S} with "{text}" text on {base:S}')
-def step_impl(context, object, text, base):
+@given('see button {label:S} with "{text}" text on {base:S}')
+def step_impl(context, label, text, base):
     pass
 
 
-@when('see button {object:S} with "{text}" text on {base:S}')
-def step_impl(context, object, text, base):
+@when('see button {label:S} with "{text}" text on {base:S}')
+def step_impl(context, label, text, base):
     if base == 'ONBOARDING_PAGE':
-        if object == 'NEXT_BTN':
-            context.app.onboarding_page.verify_next_btn(text)
-        elif object == 'CLOSE_BTN':
-            context.app.onboarding_page.verify_close_btn(text)
+        if label == 'NEXT_BTN':
+            context.app.onboarding_page.verify_text(text, label)
+        elif label == 'CLOSE_BTN':
+            context.app.onboarding_page.verify_text(text, label)
         else:
-            raise KeyError(f'{object} is not defined')
+            raise KeyError(f'{label} is not defined')
     else:
         raise KeyError(f'{base} is not defined')
 
 
-@then('see button {object:S} with "{text}" text on {base:S}')
-def step_impl(context, object, text, base):
+@then('see button {label:S} with "{text}" text on {base:S}')
+def step_impl(context, label, text, base):
     pass
 
 

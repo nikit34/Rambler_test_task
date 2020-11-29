@@ -7,15 +7,15 @@
 *legend*
 ```
 base:S - current page or base element (footer, header and etc)
-object:S - any element
+label:S - name any element
 / - separate by varianties
 float, int, str - type of data
 ```
         
 **search**
 
-- see match text "str" and <object:S> on <base:S>
-- see button <object:S> with "<str>" text on <base:S>
+- see match text "str" and <label:S> on <base:S>
+- see button <label:S> with "<str>" text on <base:S>
 -
 - 
 -
@@ -25,7 +25,7 @@ float, int, str - type of data
 
 **dragdrop**
 
-- Dragdrop <object:S> object from "<float>" by "<float>" on <base:S>
+- Dragdrop <label:S> object from "<float>" by "<float>" on <base:S>
 -
 -
 -
@@ -45,7 +45,7 @@ float, int, str - type of data
 
 **move**
 
-- Move <object:S> from "<float>" by "<float>" on <base:S>
+- Move <label:S> from "<float>" by "<float>" on <base:S>
 -
 -
 -
