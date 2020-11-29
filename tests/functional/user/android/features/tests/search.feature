@@ -1,7 +1,7 @@
 Feature: Check Onboarding page by template
 
   Background:
-    Given see partially matches text "*покажите телефон* проходите сразу в зал" and MAIN_TEXT
+    Given see partially matches text "*покажите смартфон* *проходите сразу в зал*" and MAIN_TEXT
 
   Scenario: Check text by matches and buttons
     When see completely matches text "Живой билет" and TITLE_TEXT

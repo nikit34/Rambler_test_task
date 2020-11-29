@@ -11,7 +11,7 @@ class Search:
 
     @classmethod
     def partially_matches(cls, token, pattern):
-        separate_token = token.split('*')
+        separate_token = token.split('*')[1::2]
         current_pattern = pattern
         found_result = []
         for part_token in separate_token:
