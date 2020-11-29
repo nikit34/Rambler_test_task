@@ -1,14 +1,4 @@
-from behave import given, when, then
-
-
-@given('tap button {label:S} on {base:S}')
-def step_impl(context, label, base):
-    pass
-
-
-@when('tap button {label:S} on {base:S}')
-def step_impl(context, label, base):
-    pass
+from behave import then
 
 
 @then('tap button {label:S} on {base:S}')

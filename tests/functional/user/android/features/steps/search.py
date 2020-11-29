@@ -1,11 +1,6 @@
 from behave import given, when, then
 
 
-@given('see match text "{text}" and {label:S} on {base:S}')
-def step_impl(context, text, label, base):
-    pass
-
-
 @when('see match text "{text}" and {label:S} on {base:S}')
 def step_impl(context, text, label, base):
     if base == 'ONBOARDING_PAGE':
@@ -19,16 +14,7 @@ def step_impl(context, text, label, base):
         raise KeyError(f'{base} is not defined')
 
 
-@then('see match text "{text}" and {label:S} on {base:S}')
-def step_impl(context, text, label, base):
-    pass
-
-
 @given('see button {label:S} with "{text}" text on {base:S}')
-def step_impl(context, label, text, base):
-    pass
-
-
 @when('see button {label:S} with "{text}" text on {base:S}')
 def step_impl(context, label, text, base):
     if base == 'ONBOARDING_PAGE':
@@ -40,14 +26,6 @@ def step_impl(context, label, text, base):
             raise KeyError(f'{label} is not defined')
     else:
         raise KeyError(f'{base} is not defined')
-
-
-@then('see button {label:S} with "{text}" text on {base:S}')
-def step_impl(context, label, text, base):
-    pass
-
-
-
 
 
 

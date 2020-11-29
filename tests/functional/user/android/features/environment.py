@@ -29,7 +29,6 @@ def before_tag(context, tag):
         del context.onboarding
 
 
-@capture
 def before_scenario(context, scenario):
     if "skip" in scenario.effective_tags:
         scenario.skip('[EXPECTED] Scenario was skipped')
@@ -40,13 +39,13 @@ def before_scenario(context, scenario):
       "deviceName": "Android Emulator",
       "app": "C:\\Users\\permi\\source\\repos\\draft\\3\\tests\\functional\\user\\android\\src\\app.apk",
       "appPackage": "ru.rambler.kassa",
-      "appWaitActivity": "ru.rambler.popcorn.sdk.presentation.screens.main.MainActivity"
+      # "appWaitActivity": "ru.rambler.popcorn.sdk.presentation.screens.main.MainActivity"
     }
     time_wait = 25
 
     if context.onboarding:
         time_wait = 20
-        desired_cap['appWaitActivity'] = "ru.rambler.popcorn.sdk.presentation.screens.onboarding.OnBoardingActivity"
+    desired_cap['appWaitActivity'] = "ru.rambler.popcorn.sdk.presentation.screens.onboarding.OnBoardingActivity"
 
     context.driver = webdriver.Remote('http://127.0.0.1:4723/wd/hub', desired_capabilities=desired_cap)
     context.driver.implicitly_wait(time_wait)
