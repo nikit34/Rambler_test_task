@@ -27,3 +27,9 @@ class OnboardingPage(Page):
     def verify_close_btn(self, text):
         btn_elem = self.find_element(*self.CLOSE_BTN).text
         assert self.matching_text(text, btn_elem), f'[FAILED] CLOSE_BTN don`t found select: {self.CLOSE_BTN}'
+
+    def tap_next_btn(self):
+        self.click(*self.NEXT_BTN)
+
+    def tap_close_btn(self):
+        self.click(*self.CLOSE_BTN)
