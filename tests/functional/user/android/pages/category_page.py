@@ -1,6 +1,7 @@
 from selenium.webdriver.common.by import By
-from .base_page import Page
+from .base import Page
 
 
 class CategoryPage(Page):
-    pass
+    def __init__(self, driver):
+        self.driver = driver

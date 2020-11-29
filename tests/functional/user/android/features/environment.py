@@ -5,7 +5,7 @@ import logging
 
 BEHAVE_DEBUG_ON_ERROR = True
 
-
+@capture
 def before_scenario(context, scenario):
     desired_cap = {
       "platformName": "Android",
@@ -19,11 +19,11 @@ def before_scenario(context, scenario):
     context.app = Application(context.driver)
 
 
-@capture
+@capture(level=logging.ERROR)
 def after_scenario(context, scenario):
     context.driver.quit()
 
-    if 'Status.failed' in scenario.status:
+    if 'Status.failed' == scenario.status:
         print("[FAILED] ", scenario.status)
 
 

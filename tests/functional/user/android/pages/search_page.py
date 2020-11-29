@@ -1,9 +1,10 @@
 from selenium.webdriver.common.by import By
-from .base_page import Page
+from .base import Page
 
 
 class SearchPage(Page):
-    pass
+    def __init__(self, driver):
+        self.driver = driver
 
     def input_search(self, search_phrase):
         self.input(search_phrase, '<*locator>')
