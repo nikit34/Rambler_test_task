@@ -1,8 +1,12 @@
 from appium import webdriver
 from app.application import Application
+from behave.log_capture import capture
+import logging
+
+BEHAVE_DEBUG_ON_ERROR = True
 
 
-def before_senario(context, scenario):
+def before_scenario(context, scenario):
     desired_cap = {
       "platformName": "Android",
       "deviceName": "Android Emulator",
@@ -15,6 +19,25 @@ def before_senario(context, scenario):
     context.app = Application(context.driver)
 
 
+@capture
 def after_scenario(context, scenario):
     context.driver.quit()
 
+    if 'Status.failed' in scenario.status:
+        print("[FAILED] ", scenario.status)
+
+
+def setup_debug_on_error(userdata):
+    global BEHAVE_DEBUG_ON_ERROR
+    BEHAVE_DEBUG_ON_ERROR = userdata.getbool("BEHAVE_DEBUG_ON_ERROR")
+
+
+def before_all(context):
+    setup_debug_on_error(context.config.userdata)
+    # context.config.setup_logging(
+    #     level=logging.DEBUG,
+    #     format='%(asctime)s %(filename)s[line:%(lineno)d] %(levelname)s %(message)s',
+    #     datefmt='%a, %d %b %Y %H:%M:%S',
+    #     filename='testt.log',
+    #     filemode='a'
+    # )
