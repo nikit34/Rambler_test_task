@@ -13,8 +13,8 @@ float, int, str - type of data
         
 **search**
 
-- see completely matches text "str" and "<object>"
-- see partially matches text "str" and "<object>"
+- see completely matches text "str" and <object>
+- see partially matches text "str" and <object>
 - see button <object> with "<str>" text
 - see button <object> is "</not>" ready to press
 - see button <object> is "</not>" ready to press with "<str>" text
