@@ -53,9 +53,9 @@ def step_impl(context, object, text, base):
 def step_impl(context, object, text, base):
     if base == 'ONBOARDING_PAGE':
         if object == 'NEXT_BTN':
-            pass
+            context.app.onboarding_page.verify_next_btn(text)
         elif object == 'CLOSE_BTN':
-            pass
+            context.app.onboarding_page.verify_close_btn(text)
         else:
             raise KeyError(f'{object} is not defined')
     else:

@@ -16,12 +16,7 @@ float, int, str - type of data
 
 - see match text "str" and <object:S> on <base:S>
 - see button <object:S> with "<str>" text on <base:S>
-- see button <object:S> is "</not>" ready to press on <base:S>
-- see button <object:S> is "</not>" ready to press with "<str>" text on <base:S>
-- see button <object:S> is "<active/nonactive>" state on <base:S>
-- see button <object:S> is "<active/nonactive>" state and "</not>" ready to press on <base:S>
-- see button <object:S> is "<active/nonactive>" state and with "<str>" text on <base:S>
-- see button <object:S> is "<active/nonactive>" state and "</not>" ready to press with "<str>" text on <base:S>
+-
 - 
 -
 -
