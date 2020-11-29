@@ -2,7 +2,7 @@ from selenium.webdriver.common.by import By
 from .base_page import Page
 
 
-class MainPage(Page):
+class PopularPage(Page):
     ONBOARDING_NEXT_BTN = (By.ID, 'ru.rambler.kassa:id/button_next')
     ONBOARDING_CANCEL_BTN = (By.ID, 'ru.rambler.kassa:id/button_close')
 
