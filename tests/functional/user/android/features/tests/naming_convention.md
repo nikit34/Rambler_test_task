@@ -13,15 +13,15 @@ float, int, str - type of data
         
 **search**
 
-- see completely matches text "str" and "str"
-- see partially matches text "str"
+- see completely matches text "str" and "<object>"
+- see partially matches text "str" and "<object>"
 - see button <object> with "<str>" text
 - see button <object> is "</not>" ready to press
 - see button <object> is "</not>" ready to press with "<str>" text
-- see button <object> is "<inactive/nonactive>" state
-- see button <object> is "<inactive/nonactive>" state and "</not>" ready to press
-- see button <object> is "<inactive/nonactive>" state and with "<str>" text
-- see button <object> is "<inactive/nonactive>" state and "</not>" ready to press with "<str>" text
+- see button <object> is "<active/nonactive>" state
+- see button <object> is "<active/nonactive>" state and "</not>" ready to press
+- see button <object> is "<active/nonactive>" state and with "<str>" text
+- see button <object> is "<active/nonactive>" state and "</not>" ready to press with "<str>" text
 - 
 -
 -
