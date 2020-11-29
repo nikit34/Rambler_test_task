@@ -16,26 +16,26 @@ def step_impl(context, object, state, ready, base):
     pass
 
 
-@given('see "{mode}" matches text "{text}" and {object:S} on {base:S}')
-def step_impl(context, mode, text, object, base):
+@given('see match text "{text}" and {object:S} on {base:S}')
+def step_impl(context, text, object, base):
     pass
 
 
-@when('see "{mode}" matches text "{text}" and {object:S} on {base:S}')
-def step_impl(context, mode, text, object, base):
+@when('see match text "{text}" and {object:S} on {base:S}')
+def step_impl(context, text, object, base):
     if base == 'ONBOARDING_PAGE':
-        if mode == 'completely' and object == 'TITLE_TEXT':
+        if object == 'TITLE_TEXT':
             context.app.onboarding_page.verify_title_text(text)
-        elif mode == 'partially' and object == 'MAIN_TEXT':
+        elif object == 'MAIN_TEXT':
             context.app.onboarding_page.verify_main_text(text)
         else:
-            raise KeyError(f'{mode} or {object} is not defined')
+            raise KeyError(f'{object} is not defined')
     else:
         raise KeyError(f'{base} is not defined')
 
 
-@then('see "{mode}" matches text "{text}" and {object:S} on {base:S}')
-def step_impl(context, mode, text, object, base):
+@then('see match text "{text}" and {object:S} on {base:S}')
+def step_impl(context, text, object, base):
     pass
 
 

@@ -14,7 +14,7 @@ float, int, str - type of data
         
 **search**
 
-- see <completely/partially> matches text "str" and <object:S> on <base:S>
+- see match text "str" and <object:S> on <base:S>
 - see button <object:S> with "<str>" text on <base:S>
 - see button <object:S> is "</not>" ready to press on <base:S>
 - see button <object:S> is "</not>" ready to press with "<str>" text on <base:S>
