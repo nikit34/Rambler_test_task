@@ -1,4 +1,4 @@
-from pages.base_page import Page
+from pages.base import Page
 
 from pages.onboarding_page import OnboardingPage
 

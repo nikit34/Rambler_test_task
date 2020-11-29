@@ -1,25 +1,7 @@
-class Page:
-    def __init__(self, driver):
-        self.driver = driver
-
-    def find_element(self, *locator):
-        return self.driver.find_element(*locator)
-
-    def click(self, *locator):
-        e = self.find_element(*locator)
-        e.click()
-
-    def input(self, text, *locator):
-        e = self.find_element(*locator)
-        e.clear()
-        e.send_key(text)
-
-
-class Search(Page):
-    def __init__(self, capacity=100, size_windows=50, *args, **kwargs):
+class Search:
+    def __init__(self, capacity=100, size_windows=50):
         self.capacity = capacity
         self.size_windows = size_windows
-        super(Page, self).__init__(*args, **kwargs)
 
     @staticmethod
     def matching_text(token, pattern):
@@ -45,3 +27,22 @@ class Search(Page):
         if pattern.find(token) == -1:
             return False
         return True
+
+
+class Page(Search):
+    def __init__(self, driver, *args, **kwargs):
+        self.driver = driver
+        super(Search, self).__init__(*args, **kwargs)
+
+    def find_element(self, *locator):
+        return self.driver.find_element(*locator)
+
+    def click(self, *locator):
+        e = self.find_element(*locator)
+        e.click()
+
+    def input(self, text, *locator):
+        e = self.find_element(*locator)
+        e.clear()
+        e.send_key(text)
+
