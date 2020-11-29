@@ -3,13 +3,15 @@
 
      ```adb shell dumpsys window | find "mCurrentFocus"```
 
-- File with config for Appium server
+- File ```configAppium.json``` with config for Appium server
 
-    ```configAppium.json```
+    
 
-- Intended environment variable setting file for MacOS
+- Intended environment variable ```.bash_profile``` setting file for MacOS
 
-    ```.bash_profile```    
+       
+    
+- Example ```tox.ini``` for settings runnable tasks
         
     
 ## Contacts
