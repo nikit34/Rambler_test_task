@@ -1,3 +1,16 @@
+import time
+
+
+def timeing(f):
+    def timeit(*args, **kwargs):
+        ts = time.time()
+        result = f(*args, **kwargs)
+        te = time.time()
+        print(f'\ttiming: {f.__name__}({args[1]}, {args[2]}) --> {te-ts} sec')
+        return result
+    return timeit
+
+
 class Search:
     def __init__(self, capacity=100, size_windows=50):
         self.capacity = capacity
