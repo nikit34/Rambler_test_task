@@ -6,7 +6,10 @@
 - File with config for Appium server
 
     ```configAppium.json```
-    
+
+- Intended environment variable setting file for MacOS
+
+    ```.bash_profile```    
         
     
 ## Contacts
