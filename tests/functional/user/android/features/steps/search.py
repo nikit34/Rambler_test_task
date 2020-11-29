@@ -19,9 +19,9 @@ def step_impl(context, object, state, ready):
 @given('see partially matches text "{text}" and {object:S}')
 def step_impl(context, text, object):
     if object == 'TITLE_TEXT':
-        elem = context.app.onboarding_page.verify_title_text(text)
+        context.app.onboarding_page.verify_title_text(text)
     elif object == 'MAIN_TEXT':
-        pass
+        context.app.onboarding_page.verify_main_text(text)
     else:
         raise KeyError('<object> is not defined')
 
