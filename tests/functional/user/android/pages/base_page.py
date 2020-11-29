@@ -15,19 +15,20 @@ class Page:
         e.send_key(text)
 
 
-class Search:
+class Search(Page):
     def __init__(self, capacity=100, size_windows=50, *args, **kwargs):
         self.capacity = capacity
         self.size_windows = size_windows
+        super(Page, self).__init__(*args, **kwargs)
 
     @staticmethod
-    def matching_text(token: str, pattern: str):
+    def matching_text(token, pattern):
         if '*' in token:
             return Search.partially_matches(token, pattern)
         return Search.completely_matches(token, pattern)
 
     @classmethod
-    def partially_matches(cls, token: str, pattern: str):
+    def partially_matches(cls, token, pattern):
         separate_token = token.split('*')
         current_pattern = pattern
         found_result = []
@@ -40,7 +41,7 @@ class Search:
         return found_result
 
     @classmethod
-    def completely_matches(cls, token: str, pattern: str):
+    def completely_matches(cls, token, pattern):
         if pattern.find(token) == -1:
             return False
         return True
