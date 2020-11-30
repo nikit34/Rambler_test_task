@@ -8,5 +8,6 @@
 
     [ERROR] - for code of tests
     [FAILED] - for scenarios with stop
+    [EXPECTED] - expected error
     
-    [ERROR/FAILED] [messages] [body error / select of invalid element]  
+    [ERROR/FAILED/EXPECTED] [messages] [body error / select of invalid element]  

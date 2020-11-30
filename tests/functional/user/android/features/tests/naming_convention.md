@@ -14,7 +14,7 @@ float, int, str - type of data
         
 **search**
 
-- see match text "str" and <label:S> on <base:S>
+- see match text "<str>" and <label:S> on <base:S>
 - see button <label:S> with "<str>" text on <base:S>
 -
 - 
@@ -25,7 +25,7 @@ float, int, str - type of data
 
 **dragdrop**
 
-- Dragdrop <label:S> object from "<float>" by "<float>" on <base:S>
+- dragdrop <label:S> object from "<float>" by "<float>" on <base:S>
 -
 -
 -
@@ -35,7 +35,7 @@ float, int, str - type of data
 
 **tap**
 
-- Tap by button on <page:S> page on <base:S>
+- tap by button on <page:S> page on <base:S>
 -
 -
 -
@@ -45,7 +45,7 @@ float, int, str - type of data
 
 **move**
 
-- Move <label:S> from "<float>" by "<float>" on <base:S>
+- move <label:S> from "<float>" by "<float>" on <base:S>
 -
 -
 -
@@ -54,7 +54,7 @@ float, int, str - type of data
 
 **wait**
 
-- 
+- waiting <int> sec on <base:S>
 -
 -
 -

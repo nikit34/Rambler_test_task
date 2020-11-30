@@ -1,4 +1,4 @@
-from behave import given, when, then
+from behave import given, when
 
 
 @when('see match text "{text}" and {label:S} on {base:S}')
