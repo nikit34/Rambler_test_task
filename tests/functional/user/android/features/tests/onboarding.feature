@@ -1,7 +1,7 @@
 Feature: Check Onboarding page by template
 
-#  Background:
-#    Given
+  Background: Wait open main page of app
+    Given waiting 30 sec on ONBOARDING_PAGE
 
   @onboarding
   Scenario: Check text by matches, tap next check text by matches and tap close
