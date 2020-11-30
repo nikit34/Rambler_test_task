@@ -5,7 +5,7 @@ from .base import Page
 class SearchPage(Page):
     def __init__(self, driver):
         self.driver = driver
-        super(Page, self).__init__(driver)
+        super(Page, self).__init__()
 
     def input_search(self, search_phrase):
         self.input(search_phrase, '<*locator>')

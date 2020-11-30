@@ -59,14 +59,15 @@ class Search:
 
 
 class Wait(Page):
-    def __init__(self, driver, timing=5, mode='implicitly'):
-        super(Page, self).__init__(driver)
-        self.timing = timing
-        self.mode = mode
+    def __init__(self, driver):
+        self.driver = driver
+        super(Page, self).__init__()
+        # self.timing =
 
-    def set_implicitly_timeout(self):
-        if self.mode == 'implicitly':
-            self.driver.implicitly_wait(self.timing)
-        elif self.mode == 'timeout':
-            self.driver.set_page_load_timeout(5000)
+    # def set_timeout(self):
+    #     self.driver.implicitly_wait(self.timing)
+
+
+
+
 

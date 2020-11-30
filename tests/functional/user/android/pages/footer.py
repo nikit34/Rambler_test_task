@@ -5,7 +5,7 @@ from base import Page
 class Footer(Page):
     def __init__(self, driver):
         self.driver = driver
-        super(Page, self).__init__(driver)
+        super(Page, self).__init__()
 
         self.POPULAR_BTN = (By.ID, '')
         self.CATEGORY_BTN = (By.ID, '')
