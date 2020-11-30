@@ -24,11 +24,12 @@ def before_scenario(context, scenario):
       "deviceName": "Android Emulator",
       "app": "C:\\Users\\permi\\source\\repos\\draft\\3\\tests\\functional\\user\\android\\src\\app.apk",
       "appPackage": "ru.rambler.kassa",
-      "appWaitActivity": "ru.rambler.popcorn.sdk.presentation.screens.main.MainActivity"
+      "appWaitActivity": "ru.rambler.popcorn.sdk.presentation.screens.main.MainActivity",
+      "noReset": "true"
     }
     time_implicitly_wait = 20
 
-    if context.onboarding:
+    if hasattr(context, 'onboarding'):
         time_implicitly_wait = 15
         desired_cap['appWaitActivity'] = "ru.rambler.popcorn.sdk.presentation.screens.onboarding.OnBoardingActivity"
 
