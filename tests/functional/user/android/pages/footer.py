@@ -7,23 +7,26 @@ class Footer(Page):
         self.driver = driver
         super(Page, self).__init__()
 
-        self.POPULAR_BTN = (By.ID, '')
-        self.CATEGORY_BTN = (By.ID, '')
-        self.SEARCH_BTN = (By.ID, '')
-        self.TICKET_BTN = (By.ID, '')
-        self.PROFILE_BTN = (By.ID, '')
+        self.locators = {
+            "POPULAR_BTN": (By.ID, 'ru.rambler.kassa:id/text_title'),
+            "CATEGORY_BTN": (By.ID, 'ru.rambler.kassa:id/text_message'),
+            "SEARCH_BTN": (By.ID, 'ru.rambler.kassa:id/text_title'),
+            "MAIN_TEXT": (By.ID, 'ru.rambler.kassa:id/text_message'),
+            "TICKET_BTN": (By.ID, 'ru.rambler.kassa:id/button_next'),
+            "PROFILE_BTN": (By.ID, 'ru.rambler.kassa:id/button_close'),
+        }
 
     def tap_popular(self):
-        self.click(self.POPULAR_BTN)
+        self.click(self.locators['POPULAR_BTN'])
 
     def tap_category(self):
-        self.click(self.CATEGORY_BTN)
+        self.click(self.locators['CATEGORY_BTN'])
 
     def tap_search(self):
-        self.click(self.SEARCH_BTN)
+        self.click(self.locators['SEARCH_BTN'])
 
     def tap_ticket(self):
-        self.click(self.TICKET_BTN)
+        self.click(self.locators['TICKET_BTN'])
 
     def tap_profile(self):
-        self.click(self.PROFILE_BTN)
+        self.click(self.locators['PROFILE_BTN'])
