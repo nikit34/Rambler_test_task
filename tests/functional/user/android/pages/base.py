@@ -62,21 +62,21 @@ class Wait:
     def __init__(self, driver):
         self.driver = driver
 
-        self.last_timeout = None
-        self.timeout = 0
+        self.last_custom_wait = None
+        self.custom_wait = 0
 
-    def set_timeout(self, timeout):
-        self.last_timeout = self.timeout
-        self.timeout = timeout
+    def set_custom_wait(self, context_driver, new_wait):
+        self.last_custom_wait = self.custom_wait
+        self.custom_wait = new_wait
         try:
-            self.driver.implicitly_wait(self.timeout)
+            context_driver.implicitly_wait(int(self.custom_wait))
         except TimeoutError as e:
             print(f'[ERROR] timeout was not installed - {e}')
 
-    def get_last_timeout(self):
-        if self.last_timeout is None:
+    def get_custom_wait(self):
+        if self.last_custom_wait is None:
             raise TimeoutError('[ERROR] timeout was not installed')
-        return self.last_timeout
+        return self.last_custom_wait
 
 
 
