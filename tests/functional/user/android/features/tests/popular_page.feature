@@ -8,7 +8,7 @@ Feature: Check Popular page
     When see match text "Популярное" and FOOTER_TEXT on POPULAR_PAGE
     And see elem length "5" "<" MOVE_TITLE on POPULAR_PAGE
     Given waiting 5 sec on POPULAR_PAGE
-    And see elements on POPULAR_PAGE
+    When see elements on POPULAR_PAGE
       | elem               |
       | MOVE_TIME          |
       | PLACE              |
@@ -21,7 +21,7 @@ Feature: Check Popular page
     When see match text "Популярное" and FOOTER_TEXT on POPULAR_PAGE
     And see elem length "5" "<" MOVE_TITLE on POPULAR_PAGE
     Given waiting 5 sec on POPULAR_PAGE
-    And see elements on POPULAR_PAGE
+    When see elements on POPULAR_PAGE
       | elem               |
       | MOVE_TIME          |
       | PLACE              |

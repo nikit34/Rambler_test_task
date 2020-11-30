@@ -46,7 +46,7 @@ def step_impl(context, label, text, base):
         raise KeyError(f'{base} is not defined')
 
 
-@given('see elements on {base:S}')
+@when('see elements on {base:S}')
 def step_impl(context, base):
     if base == 'POPULAR_PAGE':
         for label in context.table:
