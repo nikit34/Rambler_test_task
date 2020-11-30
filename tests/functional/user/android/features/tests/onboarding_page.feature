@@ -3,6 +3,7 @@ Feature: Check Onboarding page by template
   Background: Wait open main page of app
     Given waiting 5 sec on ONBOARDING_PAGE
 
+
   @onboarding
   Scenario: Check text by matches, tap next check text by matches and tap close
     When see match text "Живой билет" and TITLE_TEXT on ONBOARDING_PAGE
@@ -15,6 +16,7 @@ Feature: Check Onboarding page by template
     And see button NEXT_BTN with "ДАЛЕЕ" text on ONBOARDING_PAGE
     And see button CLOSE_BTN with "ЗАКРЫТЬ" text on ONBOARDING_PAGE
     Then tap button CLOSE_BTN on ONBOARDING_PAGE
+
 
   @onboarding
   Scenario: Check text by matches and tap next repeat three times
