@@ -2,9 +2,12 @@ from selenium.webdriver.common.by import By
 from .base import Page, Wait, timing, Search
 
 
-class PopularPage(Page, Wait):
+class PopularPage(Page):
     def __init__(self, driver):
-        super(Page, self).__init__(driver)
+        self.driver = driver
+        super(Page, self).__init__()
+
+        self.obj_wait = Wait()
 
         self.locators = {
             "MOVE_TITLE": (By.ID, 'ru.rambler.kassa:id/movie_title'),
@@ -15,6 +18,12 @@ class PopularPage(Page, Wait):
             "IMAGE_POSTER": (By.ID, 'ru.rambler.kassa:id/image_poster'),
             "TRAILER_BTN": (By.ID, 'ru.rambler.kassa:id/trailer_button'),
         }
+
+    def set_custom_wait(self, wait):
+        self.obj_wait.set_wait(self.driver, wait)
+
+    def get_last_custom_wait(self):
+        return self.obj_wait.get_last_wait()
 
     @timing
     def verify_text(self, text, label):

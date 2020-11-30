@@ -59,13 +59,11 @@ class Search:
 
 
 class Wait:
-    def __init__(self, driver):
-        self.driver = driver
-
+    def __init__(self):
         self.last_custom_wait = None
         self.custom_wait = 0
 
-    def set_custom_wait(self, context_driver, new_wait):
+    def set_wait(self, context_driver, new_wait):
         self.last_custom_wait = self.custom_wait
         self.custom_wait = new_wait
         try:
@@ -73,7 +71,7 @@ class Wait:
         except TimeoutError as e:
             print(f'[ERROR] timeout was not installed - {e}')
 
-    def get_custom_wait(self):
+    def get_last_wait(self):
         if self.last_custom_wait is None:
             raise TimeoutError('[ERROR] timeout was not installed')
         return self.last_custom_wait

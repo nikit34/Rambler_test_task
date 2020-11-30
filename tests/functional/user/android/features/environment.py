@@ -27,7 +27,7 @@ def before_scenario(context, scenario):
       "appWaitActivity": "ru.rambler.popcorn.sdk.presentation.screens.main.MainActivity",
       "noReset": "true"
     }
-    time_implicitly_wait = 10
+    time_implicitly_wait = 0
 
     if hasattr(context, 'onboarding'):
         time_implicitly_wait = 5
