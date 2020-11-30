@@ -12,12 +12,12 @@ class Action(Page):
 
         self.height, self.width = get_size_screen()
 
-    def calc_coords_to_percent(self, x1, y1, x2, y2):
-        px1 = float(x1) / self.width * 100
-        py1 = float(y1) / self.height * 100
-        px2 = float(x2) / self.width * 100
-        py2 = float(y2) / self.height * 100
-        return px1, py1, px2, py2
+    # def calc_coords_to_percent(self, x1, y1, x2, y2):
+    #     px1 = float(x1) / self.width * 100
+    #     py1 = float(y1) / self.height * 100
+    #     px2 = float(x2) / self.width * 100
+    #     py2 = float(y2) / self.height * 100
+    #     return px1, py1, px2, py2
 
     def calc_percent_to_coords(self, px1, py1, px2, py2):
         x1 = float(px1) / 100 * self.width
@@ -34,19 +34,19 @@ class Action(Page):
         actions.release()
         actions.perform()
         return True
-    #
+
     # def move_obj_from_elem_to_elem(self, obj, elem1, elem2):
     #     pass
-
+    #
     # def move_obj_at_delta_coords(self, obj, dx, dy):
     #     actions = TouchAction(self.driver)
     #     actions.tap_and_hold(obj)
     #     actions.move_to(obj, dx, dy)
     #     actions.perform()
-
-         # actions = ActionChains(driver)
-         # actions.move_to(element, 10, 10)
-         # actions.perform()
+    #
+    #      actions = ActionChains(driver)
+    #      actions.move_to(element, 10, 10)
+    #      actions.perform()
 
 
 
