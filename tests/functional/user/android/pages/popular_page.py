@@ -17,6 +17,7 @@ class PopularPage(Page):
             "TV_SESSION_DATA": (By.ID, 'ru.rambler.kassa:id/tvSessionDate'),
             "IMAGE_POSTER": (By.ID, 'ru.rambler.kassa:id/image_poster'),
             "TRAILER_BTN": (By.ID, 'ru.rambler.kassa:id/trailer_button'),
+            "FOOTER_TEXT": (By.ID, 'ru.rambler.kassa:id/bb_bottom_bar_title')
         }
 
     def set_custom_wait(self, wait):
@@ -35,9 +36,10 @@ class PopularPage(Page):
         self.click(*self.locators[label])
 
     @timing
-    def verify_length_text(self, min_lenght, label):
-        text_elem = self.find_element(*self.locators[label]).text
-        assert len(text_elem) > min_lenght, f'[FAILED] {label} don`t have required length select: {self.locators[label]}'
+    def verify_length_text(self, length, sign, label):
+        text_elem = self.find_element(*self.locators[label])
+        length_elem = len(text_elem.text)
+        assert Search.condition_length(length, sign, length_elem), f'[FAILED] {label} don`t have required length select: {self.locators[label]}'
 
 
 

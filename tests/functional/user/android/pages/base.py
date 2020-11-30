@@ -1,4 +1,5 @@
 import time
+import operator
 
 
 def timing(f):
@@ -56,6 +57,23 @@ class Search:
         if self.pattern.find(self.token) == -1:
             return False
         return True
+
+    @classmethod
+    def condition_length(cls, length, sign, length_elem):
+        if not isinstance(length, int): length = int(length)
+        if not isinstance(length_elem, int): length_elem = int(length_elem)
+        ops = {
+            '<': operator.lt,
+            '<=': operator.le,
+            '==': operator.eq,
+            '!=': operator.ne,
+            '>=': operator.ge,
+            '>': operator.gt
+        }
+        if sign not in ops:
+            raise KeyError('[ERROR] operator sign is invalid')
+        operation = ops[sign]
+        return operation(length, length_elem)
 
 
 class Wait:
