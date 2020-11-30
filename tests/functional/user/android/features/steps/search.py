@@ -10,6 +10,9 @@ def step_impl(context, text, label, base):
             context.app.onboarding_page.verify_text(text, label)
         else:
             raise KeyError(f'{label} is not defined')
+    elif base == 'POPULAR_PAGE':
+        if label == 'MOVE_TITLE':
+            context.popular_page.verify_text(text, label)
     else:
         raise KeyError(f'{base} is not defined')
 
