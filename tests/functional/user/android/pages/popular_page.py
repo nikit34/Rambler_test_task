@@ -1,5 +1,7 @@
 from selenium.webdriver.common.by import By
-from .base import Page, Wait, timing, Search
+from .base import Page, Search, Wait
+from .action import Action
+from .benchmarks.custom import timing
 
 
 class PopularPage(Page):
