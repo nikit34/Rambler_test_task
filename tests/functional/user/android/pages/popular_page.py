@@ -10,8 +10,8 @@ class PopularPage(Page):
 
         self.MAIN_MOVE = (By.ID, '')
 
-    # def set_timeout(self, timeout):
-    #     self.timeout = Wait(timeout).set_timeout()
+    def set_timeout(self, timeout):
+        print(self)
 
 
 

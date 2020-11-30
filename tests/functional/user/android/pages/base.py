@@ -6,7 +6,7 @@ def timing(f):
         ts = time.time()
         result = f(*args, **kwargs)
         te = time.time()
-        print(f'\ttiming: {f.__name__}({args[1:]}) --> {te-ts} sec')
+        print(f'\ttiming: {f.__name__}{args[1:]} --> {te-ts} sec')
         return result
     return timeit
 
@@ -64,8 +64,8 @@ class Wait(Page):
         super(Page, self).__init__()
         # self.timing =
 
-    # def set_timeout(self):
-    #     self.driver.implicitly_wait(self.timing)
+    def set_timeout(self):
+        print(self)
 
 
 
