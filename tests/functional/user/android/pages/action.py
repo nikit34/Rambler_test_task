@@ -6,14 +6,11 @@ class Action(Page):
         self.driver = driver
         super(Page, self).__init__()
 
-        self.height = None
-        self.width = None
+        def get_size_screen():
+            size = self.driver.get_window_size()
+            return size['height'], size['width']
 
-    def get_size_screen(self):
-        size = self.driver.get_window_size()
-        self.height = size['height']
-        self.width = size['width']
-        return size
+        self.height, self.width = get_size_screen()
 
     def calc_coords_to_percent(self, x1, y1, x2, y2):
         px1 = float(x1) / self.width * 100
@@ -32,8 +29,8 @@ class Action(Page):
     def dragdrop(self, px1, px2, py1, py2):
         x1, y1, x2, y2 = self.calc_percent_to_coords(px1, px2, py1, py2)
         actions = TouchAction(self.driver)
-        actions.press(x1, y1)
-        actions.move_to(x2, y2)
+        actions.press(None, x1, y1)
+        actions.move_to(None, x2, y2)
         actions.release()
         actions.perform()
         return True
