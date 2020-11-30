@@ -6,12 +6,13 @@ class PopularPage(Page):
     def __init__(self, driver):
         self.driver = driver
         super(Page, self).__init__()
-        # self.timeout = self.driver
+
+        self.obj_wait = Wait(self.driver)
 
         self.MAIN_MOVE = (By.ID, '')
 
     def set_timeout(self, timeout):
-        print(self)
+        self.obj_wait.set_timeout(timeout)
 
 
 

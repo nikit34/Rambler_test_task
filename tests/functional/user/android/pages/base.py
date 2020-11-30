@@ -58,16 +58,22 @@ class Search:
         return True
 
 
-class Wait(Page):
+class Wait:
     def __init__(self, driver):
         self.driver = driver
-        super(Page, self).__init__()
-        # self.timing =
 
-    def set_timeout(self):
-        print(self)
+        self.last_timeout = None
+        self.timeout = 0
 
+    def set_timeout(self, timeout):
+        self.last_timeout = self.timeout
+        self.timeout = timeout
+        self.driver.implicitly_wait(self.timeout)
 
+    def get_last_timeout(self):
+        if self.last_timeout is None:
+            raise TimeoutError('[ERROR] timeout was not installed')
+        return self.last_timeout
 
 
 
