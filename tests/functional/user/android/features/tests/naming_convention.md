@@ -25,7 +25,7 @@ float, int, str - type of data
 
 **dragdrop**
 
-- dragdrop <label:S> object from "<float>" by "<float>" on <base:S>
+- dragdrop from "<float>" "<float>" to "<float>" "<float>" on <base:S>
 -
 -
 -
@@ -45,7 +45,7 @@ float, int, str - type of data
 
 **move**
 
-- move <label:S> from "<float>" by "<float>" on <base:S>
+- move <label:S> from "<str>" to "<str>" on <base:S>
 -
 -
 -

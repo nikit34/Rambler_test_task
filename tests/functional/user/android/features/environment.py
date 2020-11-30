@@ -10,8 +10,10 @@ BEHAVE_DEBUG_ON_ERROR = True
 def before_tag(context, tag):
     if tag.startswith('onboarding'):
         context.onboarding = True
+        print('[EXPECTED] configuration set switch done on ONBOARDING')
     else:
         del context.onboarding
+        print('[EXPECTED] configuration set switch done on MAIN')
 
 
 def before_scenario(context, scenario):
@@ -27,7 +29,7 @@ def before_scenario(context, scenario):
       "appWaitActivity": "ru.rambler.popcorn.sdk.presentation.screens.main.MainActivity",
       "noReset": "true"
     }
-    time_implicitly_wait = 0
+    time_implicitly_wait = 10
 
     if hasattr(context, 'onboarding'):
         time_implicitly_wait = 5
