@@ -16,7 +16,7 @@
       "appPackage":"ru.rambler.kassa",
       "deviceName":"Android Emulator",
       "platformName":"Android",
-      "noReset":"true"
+      "noReset":"false"
     }
   }
 ]

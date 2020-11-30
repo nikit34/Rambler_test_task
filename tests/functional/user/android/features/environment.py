@@ -27,10 +27,11 @@ def before_scenario(context, scenario):
       "appWaitActivity": "ru.rambler.popcorn.sdk.presentation.screens.main.MainActivity",
       "noReset": "true"
     }
-    time_implicitly_wait = 20
+    time_implicitly_wait = 10
 
     if hasattr(context, 'onboarding'):
-        time_implicitly_wait = 15
+        time_implicitly_wait = 5
+        desired_cap['noReset'] = "false"
         desired_cap['appWaitActivity'] = "ru.rambler.popcorn.sdk.presentation.screens.onboarding.OnBoardingActivity"
 
     context.driver = webdriver.Remote('http://127.0.0.1:4723/wd/hub', desired_capabilities=desired_cap)
