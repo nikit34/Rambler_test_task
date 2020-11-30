@@ -12,7 +12,7 @@ def pytest_generate_tests(metafunc):
 
 class TestSearch:
     params = {
-        "test_partially_matches": [
+        "test_matching_text": [
             dict(data={
                 'token': '*покажите смартфон* *проходите сразу в зал*',
                 'pattern': 'Забудьте про очереди, покажите смартфон и проходите сразу в зал'
@@ -25,9 +25,7 @@ class TestSearch:
                 'pattern': 'Забудьте про очереди, покажите смартфон и проходите сразу в зал'
             }, answer=[
 
-            ])
-        ],
-        "test_completely_matches": [
+            ]),
             dict(data={
                 'token': 'Живой билет',
                 'pattern': 'Живой билет'
@@ -43,14 +41,10 @@ class TestSearch:
         ],
     }
 
-    def test_partially_matches(self, data, answer):
+    def test_matching_text(self, data, answer):
         token = data['token']
         pattern = data['pattern']
-        assert Search.partially_matches(token, pattern) == answer, '[ERROR] partially_matches'
+        assert Search.matching_text(token, pattern) == answer, '[ERROR] matching_text'
 
-    def test_completely_matches(self, data, answer):
-        token = data['token']
-        pattern = data['pattern']
-        assert Search.completely_matches(token, pattern) == answer, '[ERROR] completely_matches'
 
 
