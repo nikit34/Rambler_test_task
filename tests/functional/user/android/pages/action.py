@@ -9,17 +9,6 @@ class Action(Page):
         self.height = None
         self.width = None
 
-    @classmethod
-    def click(cls, driver, *locator):
-        this = cls(driver)
-        e = this.find_element(*locator)
-        e.click()
-
-    def input(self, text, *locator):
-        e = self.find_element(*locator)
-        e.clear()
-        e.send_key(text)
-
     def get_size_screen(self):
         size = self.driver.get_window_size()
         self.height = size['height']
@@ -27,21 +16,27 @@ class Action(Page):
         return size
 
     def calc_coords_to_percent(self, x1, y1, x2, y2):
-        px1 = x1 / self.width * 100
-        py1 = y1 / self.height * 100
-        px2 = x2 / self.width * 100
-        py2 = y2 / self.height * 100
+        px1 = float(x1) / self.width * 100
+        py1 = float(y1) / self.height * 100
+        px2 = float(x2) / self.width * 100
+        py2 = float(y2) / self.height * 100
         return px1, py1, px2, py2
 
     def calc_percent_to_coords(self, px1, py1, px2, py2):
-        x1 = px1 / 100 * self.width
-        y1 = py1 / 100 * self.height
-        x2 = px2 / 100 * self.width
-        y2 = py2 / 100 * self.height
+        x1 = float(px1) / 100 * self.width
+        y1 = float(py1) / 100 * self.height
+        x2 = float(px2) / 100 * self.width
+        y2 = float(py2) / 100 * self.height
         return x1, y1, x2, y2
 
-    # def dragdrop(self, px1, px2, py1, py2):
-    #     pass
+    def dragdrop(self, px1, px2, py1, py2):
+        x1, y1, x2, y2 = self.calc_percent_to_coords(px1, px2, py1, py2)
+        actions = TouchAction(self.driver)
+        actions.press(x1, y1)
+        actions.move_to(x2, y2)
+        actions.release()
+        actions.perform()
+        return True
     #
     # def move_obj_from_elem_to_elem(self, obj, elem1, elem2):
     #     pass
