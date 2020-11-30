@@ -9,7 +9,6 @@ class OnboardingPage(Page):
 
         # TODO: refactoring
         self.obj_wait = Wait()
-        self.obj_action = Action(self.driver)
 
         self.locators = {
             "TITLE_TEXT": (By.ID, 'ru.rambler.kassa:id/text_title'),
@@ -31,5 +30,5 @@ class OnboardingPage(Page):
 
     @timing
     def tap_btn(self, label):
-        self.obj_action.click(*self.locators[label])
+        Action.click(self.driver, *self.locators[label])
 
