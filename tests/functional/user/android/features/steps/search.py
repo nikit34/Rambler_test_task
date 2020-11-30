@@ -1,7 +1,8 @@
-from behave import given, when
+from behave import given, when, then
 
 
 @when('see match text "{text}" and {label:S} on {base:S}')
+@then('see match text "{text}" and {label:S} on {base:S}')
 def step_impl(context, text, label, base):
     if base == 'ONBOARDING_PAGE':
         if label == 'TITLE_TEXT':
@@ -11,11 +12,19 @@ def step_impl(context, text, label, base):
         else:
             raise KeyError(f'{label} is not defined')
     elif base == 'POPULAR_PAGE':
-        if label == 'MOVE_TITLE':
-            context.popular_page.verify_text(text, label)
+        if label == 'PLACE_DIST':
+            context.app.popular_page.verify_text(text, label)
+        elif label == 'TV_SESSION_DATA':
+            context.app.popular_page.verify_text(text, label)
+        else:
+            raise KeyError(f'{label} is not defined')
     else:
         raise KeyError(f'{base} is not defined')
 
+
+@when('see text have lenght "{sign}" "{lenght}" for {label:S} on {base:S}')
+def step_impl(context, sign, lenght, label, base):
+    pass
 
 @given('see button {label:S} with "{text}" text on {base:S}')
 @when('see button {label:S} with "{text}" text on {base:S}')

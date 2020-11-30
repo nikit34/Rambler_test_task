@@ -2,12 +2,9 @@ from selenium.webdriver.common.by import By
 from .base import Page, Wait, timing, Search
 
 
-class PopularPage(Page):
+class PopularPage(Page, Wait):
     def __init__(self, driver):
-        self.driver = driver
-        super(Page, self).__init__()
-
-        self.obj_wait = Wait(self.driver)
+        super(Page, self).__init__(driver)
 
         self.locators = {
             "MOVE_TITLE": (By.ID, 'ru.rambler.kassa:id/movie_title'),
@@ -19,9 +16,6 @@ class PopularPage(Page):
             "TRAILER_BTN": (By.ID, 'ru.rambler.kassa:id/trailer_button'),
         }
 
-    def set_timeout(self, timeout):
-        self.obj_wait.set_timeout(timeout)
-
     @timing
     def verify_text(self, text, label):
         text_elem = self.find_element(*self.locators[label]).text
@@ -30,6 +24,11 @@ class PopularPage(Page):
     @timing
     def tap_btn(self, label):
         self.click(*self.locators[label])
+
+    @timing
+    def verify_length_text(self, min_lenght, label):
+        text_elem = self.find_element(*self.locators[label]).text
+        assert len(text_elem) > min_lenght, f'[FAILED] {label} don`t have required length select: {self.locators[label]}'
 
 
 
