@@ -33,7 +33,7 @@ def before_scenario(context, scenario):
     time_implicitly_wait = 10
 
     if hasattr(context, 'onboarding'):
-        time_implicitly_wait = 5
+        time_implicitly_wait = 7
         desired_cap['noReset'] = "false"
         desired_cap['appWaitActivity'] = "ru.rambler.popcorn.sdk.presentation.screens.onboarding.OnBoardingActivity"
 

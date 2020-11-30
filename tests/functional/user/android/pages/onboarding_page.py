@@ -2,13 +2,11 @@ from selenium.webdriver.common.by import By
 from .base import Page, Search, Wait, timing
 from .action import Action
 
-class OnboardingPage(Page):
+class OnboardingPage(Page, Wait):
     def __init__(self, driver):
         self.driver = driver
         super(Page, self).__init__()
-
-        # TODO: refactoring
-        self.obj_wait = Wait()
+        super(Wait, self).__init__()
 
         self.locators = {
             "TITLE_TEXT": (By.ID, 'ru.rambler.kassa:id/text_title'),
@@ -18,10 +16,10 @@ class OnboardingPage(Page):
         }
 
     def set_custom_wait(self, wait):
-        self.obj_wait.set_wait(self.driver, wait)
+        self.set_wait(self.driver, wait)
 
     def get_last_custom_wait(self):
-        return self.obj_wait.get_last_wait()
+        return self.get_last_wait()
 
     @timing
     def verify_text(self, text, label):
