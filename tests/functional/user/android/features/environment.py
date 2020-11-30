@@ -10,10 +10,11 @@ BEHAVE_DEBUG_ON_ERROR = True
 def before_tag(context, tag):
     if tag.startswith('onboarding'):
         context.onboarding = True
-        print('[EXPECTED] configuration set switch done on ONBOARDING')
+        print('[EXPECTED] Configuration set switch done on ONBOARDING')
     else:
-        del context.onboarding
-        print('[EXPECTED] configuration set switch done on MAIN')
+        if hasattr(context, 'onboarding'):
+            del context.onboarding
+        print('[EXPECTED] Configuration set switch done on MAIN')
 
 
 def before_scenario(context, scenario):
@@ -45,8 +46,7 @@ def before_scenario(context, scenario):
 def after_scenario(context, scenario):
     context.driver.quit()
 
-    if 'Status.failed' == scenario.status:
-        print("[FAILED] ", scenario.status)
+    print('scenario status: ', scenario.status)
 
 
 def setup_debug_on_error(userdata):

@@ -1,4 +1,5 @@
 from pages.base import Page
+from pages.action import Action
 
 from pages.onboarding_page import OnboardingPage
 
@@ -22,6 +23,8 @@ from pages.order_page import OrderPage
 class Application:
     def __init__(self, driver):
         self.base = Page(driver)
+
+        self.action = Action(driver)
 
         self.onboarding_page = OnboardingPage(driver)
 

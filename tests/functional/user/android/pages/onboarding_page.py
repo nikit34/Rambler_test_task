@@ -1,13 +1,15 @@
 from selenium.webdriver.common.by import By
 from .base import Page, Search, Wait, timing
-
+from .action import Action
 
 class OnboardingPage(Page):
     def __init__(self, driver):
         self.driver = driver
         super(Page, self).__init__()
 
+        # TODO: refactoring
         self.obj_wait = Wait()
+        self.obj_action = Action(self.driver)
 
         self.locators = {
             "TITLE_TEXT": (By.ID, 'ru.rambler.kassa:id/text_title'),
@@ -29,5 +31,5 @@ class OnboardingPage(Page):
 
     @timing
     def tap_btn(self, label):
-        self.click(*self.locators[label])
+        self.obj_action.click(*self.locators[label])
 
