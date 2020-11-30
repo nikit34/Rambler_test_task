@@ -68,7 +68,10 @@ class Wait:
     def set_timeout(self, timeout):
         self.last_timeout = self.timeout
         self.timeout = timeout
-        self.driver.implicitly_wait(self.timeout)
+        try:
+            self.driver.implicitly_wait(self.timeout)
+        except TimeoutError as e:
+            print(f'[ERROR] timeout was not installed - {e}')
 
     def get_last_timeout(self):
         if self.last_timeout is None:
