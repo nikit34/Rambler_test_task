@@ -7,8 +7,9 @@ def timing(f):
         ts = time.time()
         result = f(*args, **kwargs)
         te = time.time()
-        print(f'\ttiming: {f.__name__}{args[1:]} --> {te-ts} sec')
+        print(f'\ttiming: {f.__name__}{args[1:]} --> {te - ts} sec')
         return result
+
     return timeit
 
 
@@ -60,9 +61,11 @@ class Search:
 
     @classmethod
     def condition_length(cls, length, sign, length_elem):
-        if not isinstance(length, int): length = int(length)
-        if not isinstance(length_elem, int): length_elem = int(length_elem)
-        ops = {
+        if not isinstance(length, int):
+            length = int(length)
+        if not isinstance(length_elem, int):
+            length_elem = int(length_elem)
+        operators = {
             '<': operator.lt,
             '<=': operator.le,
             '==': operator.eq,
@@ -70,9 +73,9 @@ class Search:
             '>=': operator.ge,
             '>': operator.gt
         }
-        if sign not in ops:
+        if sign not in operators:
             raise KeyError('[ERROR] operator sign is invalid')
-        operation = ops[sign]
+        operation = operators[sign]
         return operation(length, length_elem)
 
 
@@ -93,6 +96,3 @@ class Wait:
         if self.last_custom_wait is None:
             raise TimeoutError('[ERROR] timeout was not installed')
         return self.last_custom_wait
-
-
-

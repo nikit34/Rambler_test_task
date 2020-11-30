@@ -41,6 +41,8 @@ class PopularPage(Page):
         length_elem = len(text_elem.text)
         assert Search.condition_length(length, sign, length_elem), f'[FAILED] {label} don`t have required length select: {self.locators[label]}'
 
-
-
+    @timing
+    def exist_elem(self, label):
+        elem = self.find_element(*self.locators[label])
+        assert elem, f'[FAILED] {label} don`t found select: {self.locators[label]}'
 

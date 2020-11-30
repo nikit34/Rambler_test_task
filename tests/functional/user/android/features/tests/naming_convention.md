@@ -16,8 +16,8 @@ float, int, str - type of data
 
 - see match text "<str>" and <label:S> on <base:S>
 - see button <label:S> with "<str>" text on <base:S>
--
-- 
+- see elem <label:S> on <base:S>
+- see elem length "<str>" "<str>" <label:S> on <base:S>
 -
 -
 -
@@ -35,7 +35,7 @@ float, int, str - type of data
 
 **tap**
 
-- tap by button on <page:S> page on <base:S>
+- tap button <base:S> on <base:S>
 -
 -
 -
