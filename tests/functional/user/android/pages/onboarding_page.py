@@ -1,6 +1,5 @@
 from selenium.webdriver.common.by import By
 from .base import Page, Search, Wait
-from .action import Action
 from .benchmarks.custom import timing
 
 
@@ -30,5 +29,5 @@ class OnboardingPage(Page, Wait):
 
     @timing
     def tap_btn(self, label):
-        Action.click(self.driver, *self.locators[label])
+        self.click(*self.locators[label])
 

@@ -8,6 +8,15 @@ class Page:
     def find_element(self, *locator):
         return self.driver.find_element(*locator)
 
+    def click(self, *locator):
+        e = self.find_element(*locator)
+        e.click()
+
+    def input(self, text, *locator):
+        e = self.find_element(*locator)
+        e.clear()
+        e.send_key(text)
+
 
 class Search:
     def __init__(self, token, pattern):

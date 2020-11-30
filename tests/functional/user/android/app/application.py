@@ -24,8 +24,6 @@ class Application:
     def __init__(self, driver):
         self.base = Page(driver)
 
-        self.action = Action(driver)
-
         self.onboarding_page = OnboardingPage(driver)
 
         self.popular_page = PopularPage(driver)
