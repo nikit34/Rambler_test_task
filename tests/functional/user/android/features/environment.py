@@ -1,25 +1,10 @@
 from appium import webdriver
 from app.application import Application
 from behave.log_capture import capture
-from behave.fixture import fixture, use_fixture_by_tag
 import logging
 
+
 BEHAVE_DEBUG_ON_ERROR = True
-
-
-@fixture
-def onboarding(context):
-    desired_cap = {
-        "platformName": "Android",
-        "deviceName": "Android Emulator",
-        "app": "C:\\Users\\permi\\source\\repos\\draft\\3\\tests\\functional\\user\\android\\src\\app.apk",
-        "appPackage": "ru.rambler.kassa",
-        "appWaitActivity": "ru.rambler.popcorn.sdk.presentation.screens.onboarding.OnBoardingActivity"
-    }
-    context.driver = webdriver.Remote('http://127.0.0.1:4723/wd/hub', desired_capabilities=desired_cap)
-    context.driver.implicitly_wait(5)
-    context.app = Application(context.driver)
-    yield context.driver
 
 
 def before_tag(context, tag):
@@ -39,16 +24,16 @@ def before_scenario(context, scenario):
       "deviceName": "Android Emulator",
       "app": "C:\\Users\\permi\\source\\repos\\draft\\3\\tests\\functional\\user\\android\\src\\app.apk",
       "appPackage": "ru.rambler.kassa",
-      # "appWaitActivity": "ru.rambler.popcorn.sdk.presentation.screens.main.MainActivity"
+      "appWaitActivity": "ru.rambler.popcorn.sdk.presentation.screens.main.MainActivity"
     }
-    time_wait = 25
+    time_implicitly_wait = 20
 
     if context.onboarding:
-        time_wait = 20
-    desired_cap['appWaitActivity'] = "ru.rambler.popcorn.sdk.presentation.screens.onboarding.OnBoardingActivity"
+        time_implicitly_wait = 15
+        desired_cap['appWaitActivity'] = "ru.rambler.popcorn.sdk.presentation.screens.onboarding.OnBoardingActivity"
 
     context.driver = webdriver.Remote('http://127.0.0.1:4723/wd/hub', desired_capabilities=desired_cap)
-    context.driver.implicitly_wait(time_wait)
+    context.driver.implicitly_wait(time_implicitly_wait)
     context.app = Application(context.driver)
 
 
