@@ -32,8 +32,3 @@ Feature: Check Popular page
 #      | TV_SESSION_DATA    |
     Then dragdrop from "90" "30" to "10" "30" on POPULAR_PAGE
     And dragdrop from "10" "60" to "90" "40" on POPULAR_PAGE
-  
-    
-  Scenario: Pass in order page for choice place
-    When tap button MOVE_TIME on POPULAR_PAGE
-    Then see match text "ДАЛЕЕ" and NEXT_BTN on ORDER_PLACE_PAGE

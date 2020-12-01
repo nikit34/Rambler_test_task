@@ -1,12 +1,13 @@
 from selenium.webdriver.common.by import By
-from .base import Page, Search
+from .base import Page, Search, Wait
 from .benchmarks.custom import timing
 
 
-class OrderPlacePage(Page):
+class OrderPlacePage(Page, Wait):
     def __init__(self, driver):
         self.driver = driver
         super(Page, self).__init__()
+        super(Wait, self).__init__()
 
         self.locators = {
             "TICKET_COUNT_ONE": (By.ID, 'ru.rambler.kassa:id/tickets_count_and_price_text_view'),
@@ -17,6 +18,12 @@ class OrderPlacePage(Page):
             "SESSION_TITLE": (By.ID, 'ru.rambler.kassa:id/session_title_text_view'),
             "TOOLBAR": (By.ID, 'ru.rambler.kassa:id/toolbar'),
         }
+
+    def set_custom_wait(self, wait):
+        self.set_wait(self.driver, wait)
+
+    def get_last_custom_wait(self):
+        return self.get_last_wait()
 
     @timing
     def verify_text(self, text, label):

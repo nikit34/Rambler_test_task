@@ -61,5 +61,17 @@ def step_impl(context, base):
                 break
             else:
                 raise KeyError(f'{label["elem"]} is not defined')
+    if base == 'ORDER_PLACE_PAGE':
+        for label in context.table:
+            if label['elem'] in ['TICKET_COUNT_ONE',
+                                 'TICKET_COUNT_PLUS',
+                                 'LEVEL_MAP_VIEW',
+                                 'SESSION_SUB_TITLE',
+                                 'SESSION_TITLE',
+                                 'TOOLBAR']:
+                context.app.popular_page.exist_elem(label['elem'])
+                break
+            else:
+                raise KeyError(f'{label["elem"]} is not defined')
     else:
         raise KeyError(f'{base} is not defined')
