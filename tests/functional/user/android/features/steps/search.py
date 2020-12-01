@@ -75,3 +75,18 @@ def step_impl(context, base):
                 raise KeyError(f'{label["elem"]} is not defined')
     else:
         raise KeyError(f'{base} is not defined')
+
+
+@then('dont see error on {base:S}')
+def step_impl(context, base):
+    if base == 'ERRORS_PAGES':
+        for label in context.table:
+            if label['elem'] in ['TEXT_ERROR',
+                                 'RETRY_BTN',
+                                 'TOOLBAR']:
+                context.app.errors_pages.not_exist_elem(label['elem'])
+                break
+            else:
+                raise KeyError(f'{label["elem"]} is not defined')
+    else:
+        raise KeyError(f'{base} is not defined')

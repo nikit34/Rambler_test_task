@@ -6,7 +6,12 @@ Feature: Check Order Page for choice places
   @order_place
   Scenario: Pass in order page for choice place and check elements at exists
     When tap button MOVE_TIME on POPULAR_PAGE
-    Then see match text "ДАЛЕЕ" and NEXT_BTN on ORDER_PLACE_PAGE
+    Then dont see error on ERRORS_PAGES
+      | elem                 |
+      | TEXT_ERROR           |
+      | RETRY_BTN            |
+      | TOOLBAR              |
+    And see match text "ДАЛЕЕ" and NEXT_BTN on ORDER_PLACE_PAGE
     When see elements on ORDER_PLACE_PAGE
       | elem                 |
       | TICKET_COUNT_ONE     |

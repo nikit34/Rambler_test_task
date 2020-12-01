@@ -19,6 +19,8 @@ from pages.order_category_page import OrderCategoryPage
 from pages.order_products_page import OrderProductsPage
 from pages.order_page import OrderPage
 
+from pages.errors_pages import ErrorsPages
+
 
 class Application:
     def __init__(self, driver):
@@ -41,3 +43,5 @@ class Application:
         self.order_category_page = OrderCategoryPage(driver)
         self.order_products_page = OrderProductsPage(driver)
         self.order_page = OrderPage(driver)
+
+        self.errors_pages = ErrorsPages(driver)
