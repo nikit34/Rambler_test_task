@@ -29,21 +29,22 @@ def before_scenario(context, scenario):
 
     desired_cap = {
       "platformName": "Android",
-      "deviceName": "Android Emulator",
+      "deviceName": "emulator-5554",
       "app": "C:\\Users\\permi\\source\\repos\\draft\\3\\tests\\functional\\user\\android\\src\\app.apk",
     }
-    time_implicitly_wait = 30
+    time_implicitly_wait = 5
 
     if hasattr(context, 'onboarding'):
-        time_implicitly_wait = 56
+        time_implicitly_wait = 5
         desired_cap['noReset'] = "false"
-        desired_cap['appWaitPackage'] = "ru.rambler.kassa"
+        desired_cap['appPackage'] = "ru.rambler.kassa"
+        desired_cap['appActivity'] = "ru.rambler.popcorn.sdk.presentation.screens.main.MainActivity"
         desired_cap['appWaitActivity'] = "ru.rambler.popcorn.sdk.presentation.screens.onboarding.OnBoardingActivity"
     elif hasattr(context, 'order_place'):
-        time_implicitly_wait = 45
+        time_implicitly_wait = 10
         desired_cap['noReset'] = "true"
-        desired_cap['appWaitPackage'] = "ru.rambler.kassa"
-        desired_cap['appWaitActivity'] = "ru.rambler.buyticket.presentation.screens.main.OrderActivity"
+        desired_cap['appPackage'] = "ru.rambler.kassa"
+        desired_cap['appActivity'] = "ru.rambler.popcorn.sdk.presentation.screens.main.MainActivity"
     else:
         desired_cap['noReset'] = "true"
         desired_cap['appPackage'] = "ru.rambler.kassa"

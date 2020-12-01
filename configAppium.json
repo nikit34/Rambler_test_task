@@ -2,7 +2,17 @@
   {
     "main": {
       "app":"<path_app>",
-      "appWaitActivity":"ru.rambler.popcorn.sdk.presentation.screens.main.MainActivity",
+      "appActivity":"ru.rambler.popcorn.sdk.presentation.screens.main.MainActivity",
+      "appPackage":"ru.rambler.kassa",
+      "deviceName":"Android Emulator",
+      "platformName":"Android",
+      "noReset":"true"
+    }
+  },
+  {
+    "order_place": {
+      "app":"<path_app>",
+      "appActivity":"ru.rambler.popcorn.sdk.presentation.screens.main.MainActivity",
       "appPackage":"ru.rambler.kassa",
       "deviceName":"Android Emulator",
       "platformName":"Android",
@@ -12,6 +22,7 @@
   {
     "onboarding": {
       "app":"<path_app>",
+      "appActivity":"ru.rambler.popcorn.sdk.presentation.screens.main.MainActivity",
       "appWaitActivity":"ru.rambler.popcorn.sdk.presentation.screens.onboarding.OnBoardingActivity",
       "appPackage":"ru.rambler.kassa",
       "deviceName":"Android Emulator",
