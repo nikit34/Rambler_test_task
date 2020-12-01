@@ -11,9 +11,14 @@ def before_tag(context, tag):
     if tag.startswith('onboarding'):
         context.onboarding = True
         print('[EXPECTED] Configuration set switch done on ONBOARDING')
+    elif tag.startswith('order_place'):
+        context.order_place = True
+        print('[EXPECTED] Configuration set switch done on ORDER_PLACE')
     else:
         if hasattr(context, 'onboarding'):
             del context.onboarding
+        if hasattr(context, 'order_place'):
+            del context.order_place
         print('[EXPECTED] Configuration set switch done on MAIN')
 
 
@@ -26,16 +31,23 @@ def before_scenario(context, scenario):
       "platformName": "Android",
       "deviceName": "Android Emulator",
       "app": "C:\\Users\\permi\\source\\repos\\draft\\3\\tests\\functional\\user\\android\\src\\app.apk",
-      "appPackage": "ru.rambler.kassa",
-      "appWaitActivity": "ru.rambler.popcorn.sdk.presentation.screens.main.MainActivity",
-      "noReset": "true"
     }
-    time_implicitly_wait = 10
+    time_implicitly_wait = 30
 
     if hasattr(context, 'onboarding'):
-        time_implicitly_wait = 7
+        time_implicitly_wait = 56
         desired_cap['noReset'] = "false"
+        desired_cap['appWaitPackage'] = "ru.rambler.kassa"
         desired_cap['appWaitActivity'] = "ru.rambler.popcorn.sdk.presentation.screens.onboarding.OnBoardingActivity"
+    elif hasattr(context, 'order_place'):
+        time_implicitly_wait = 45
+        desired_cap['noReset'] = "true"
+        desired_cap['appWaitPackage'] = "ru.rambler.kassa"
+        desired_cap['appWaitActivity'] = "ru.rambler.buyticket.presentation.screens.main.OrderActivity"
+    else:
+        desired_cap['noReset'] = "true"
+        desired_cap['appPackage'] = "ru.rambler.kassa"
+        desired_cap['appActivity'] = "ru.rambler.popcorn.sdk.presentation.screens.main.MainActivity"
 
     context.driver = webdriver.Remote('http://127.0.0.1:4723/wd/hub', desired_capabilities=desired_cap)
     context.driver.implicitly_wait(time_implicitly_wait)

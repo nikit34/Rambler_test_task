@@ -1,10 +1,9 @@
 Feature: Check Order Page for choice places
 
-  #TODO: give me page
   Background: Wait open main page of app
-    Given waiting 5 sec on ONBOARDING_PAGE
+    Given waiting 5 sec on ORDER_PLACE_PAGE
 
-
+  @order_place
   Scenario: Check elements at exists
     When see elements on ORDER_PLACE_PAGE
       | elem                 |
